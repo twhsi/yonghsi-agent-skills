@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>八大面向 - iMandalArt</title>
+<style>
+:root {
+  color-scheme: light;
+  --body: #d9d5c8;
+  --card: #f3f0e6;
+  --grid: #111111;
+  --cell: #fbfaf3;
+  --center: #fffdf6;
+  --accent: #111111;
+  --text: #111111;
+  --radius: 0;
+  --shadow: 10px 10px 0 rgba(0,0,0,.22);
+  --font: Chicago, Geneva, 'Helvetica Neue', Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--body);
+  color: var(--text);
+  font-family: var(--font);
+}
+.stage {
+  width: min(92vmin, 760px);
+  aspect-ratio: 1 / 1;
+  padding: 4.8%;
+  background: var(--card);
+  border: 3px solid var(--grid);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 3.4%;
+}
+.topbar {
+  min-height: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  font-size: clamp(18px, 3.2vmin, 30px);
+  line-height: 1;
+}
+.topbar small {
+  font-size: clamp(12px, 1.7vmin, 16px);
+  font-weight: 700;
+  color: var(--accent);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border: 2px solid var(--grid);
+  background: var(--grid);
+  gap: 2px;
+  min-height: 0;
+}
+.cell {
+  min-width: 0;
+  min-height: 0;
+  background: var(--cell);
+  border-radius: var(--radius);
+  padding: 8%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  line-height: 1.22;
+  font-weight: 760;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+.cell > div {
+  max-width: 100%;
+}
+.cell.xl { font-size: clamp(25px, 4.4vmin, 48px); }
+.cell.lg { font-size: clamp(21px, 3.5vmin, 38px); }
+.cell.md { font-size: clamp(17px, 2.8vmin, 30px); }
+.cell.sm { font-size: clamp(14px, 2.15vmin, 23px); }
+.center {
+  background: var(--center);
+  outline: 4px solid var(--accent);
+  outline-offset: -8px;
+  border-radius: 16px;
+  align-items: flex-start;
+}
+.center > div {
+  font-weight: 900;
+}
+.footer {
+  min-height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--accent);
+  font-size: clamp(12px, 1.8vmin, 16px);
+  font-weight: 700;
+}
+.navdot {
+  width: .55rem;
+  height: .55rem;
+  border-radius: 999px;
+  background: var(--accent);
+  display: inline-block;
+}
+@media (max-width: 520px) {
+  .stage { width: 96vmin; padding: 4%; }
+  .cell { padding: 7%; }
+}
+</style>
+</head>
+<body>
+  <main class="stage" aria-label="iMandalArt square index card">
+    <header class="topbar"><span>八大面向</span><small>3x3</small></header>
+    <div class="grid">
+      <section class="cell xl"><div>觸發語</div></section>
+<section class="cell xl"><div>輸入源</div></section>
+<section class="cell xl"><div>構圖辨識</div></section>
+<section class="cell xl"><div>水墨輸出</div></section>
+<section class="cell xl center"><div>塗鴉匣</div></section>
+<section class="cell xl"><div>工作流程</div></section>
+<section class="cell xl"><div>保存筆記</div></section>
+<section class="cell xl"><div>不要做</div></section>
+<section class="cell xl"><div>下一技能</div></section>
+    </div>
+    <footer class="footer"><span>‹</span><span class="navdot"></span><span>⌂</span></footer>
+  </main>
+</body>
+</html>

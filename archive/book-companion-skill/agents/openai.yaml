@@ -1,0 +1,4 @@
+interface:
+  display_name: "Book Companion Skill"
+  short_description: "Turn book exercises into executable Codex workflows"
+  default_prompt: "Use $book-companion-skill to turn this chapter exercise into a reusable Codex workflow."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian Graph View"
+  short_description: "Weighted graph PNG/SVG for notes"
+  default_prompt: "Create an Obsidian-style graph view from this JSON: high-weight nodes centered, spherical nodes, clear Chinese labels, and export PNG/SVG/HTML."

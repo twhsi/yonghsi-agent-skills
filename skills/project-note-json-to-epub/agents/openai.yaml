@@ -1,0 +1,7 @@
+interface:
+  display_name: "專案筆記Json變成Epub"
+  short_description: "目錄索引卡交叉連結轉EPUB"
+  default_prompt: "Use $project-note-json-to-epub to convert this chapter/project JSON into an EPUB with directory cards, keyword index cards, cross-links, backlinks, chapter split plan, and full link validation."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,4 @@
+interface:
+  display_name: "iMandalArt"
+  short_description: "做成五字定格、無框、◎中心的純文字手機九宮卡。"
+  default_prompt: "請使用 $imandalart，把這段內容做成五字定格、無框、◎中心的純文字手機九宮卡："

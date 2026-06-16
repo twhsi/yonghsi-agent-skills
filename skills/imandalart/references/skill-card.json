@@ -1,0 +1,36 @@
+{
+  "id": "imandalart",
+  "name": "iMandalArt",
+  "one_sentence": "把長文、規格、紙本九宮或腦暴整理成手機寬度的 Discord PE2 正方形 3x3 iMandalArt 文字卡。",
+  "trigger": "使用者提到 iMandalArt、I MandalArt、手機方形曼陀羅、正方形九宮索引卡、PE2 文字 UI、Discord 可貼九宮、HyperCard-like Mandala、紙本九宮、Diddlebug 或 BPDA/Palm 方形卡片。",
+  "input": "中文、日文、英文混合文字；規格清單；文章摘錄；比較表；腦暴材料；紙本九宮參考。",
+  "output": "手機寬度 PE2-style monospaced code block：獨立標題框加正方形 3x3 內容文字卡；必要時附 HTML 視覺卡或 JSON handoff。",
+  "do": [
+    "優先產生 Discord 可直接顯示的 PE2 文字卡",
+    "標題獨立成 [ 標題 ] 輕量 title line，內容九宮另成一個大正方",
+    "九格要像九張小卡片，有格間留白，不要像連續工程表格",
+    "預設左上對齊，中心格用 ⭕ 與重邊框做層級區隔",
+    "周圍格子用中文標題感強調；compact mode 中文不要插空格，mobile-human 優先保留右側 2-4 格留白",
+    "把空白鍵當視覺語言：短標籤後的補白形成 Palm 卡片內距",
+    "套用 PALM gate：Phone first、At-a-glance、Locked layout、Measured margin",
+    "畫完後立刻執行 square check，通過才交付",
+    "先計算每格可容納幾個中文字與 ASCII 字元，不足用空白補齊",
+    "以中心格作為卡片 hub",
+    "用八個周邊格承載索引卡式短欄位",
+    "用 display width 解決中英文混排與補空格"
+  ],
+  "do_not_do": [
+    "不要把主要輸出做成 Markdown 九宮格或 HTML-only",
+    "不要做成 81 宮展開圖",
+    "不要做成 icon-only 視覺九宮圖",
+    "不要把每格塞成長段文章"
+  ],
+  "success_test": "給一段材料或紙本九宮參考後，能產生手機不需橫向滑動、不換行的 Discord text code block；PALM Phone first 檢查要求九宮主體 <=32 display columns；標題與內容分離；中心格有 ⭕ 與重邊框；中心必須是 ⭕ 加中心標籤，不能只有 ⭕；中心盡量是 ⭕ 加 3 個中文字；周圍格是中文標題感；compact mode 中文不插空格，mobile-human 優先使用 2-3 個中文字並保留右側 2-4 格留白；每格先計算容量並補空白；空白形成 Palm 卡片內距；九格像九張小卡片；square check 顯示 OK；mobile-human 另通過 human-eye gate；中英文混排不爆格；內容九宮像一個大正方。",
+  "next_skills": [
+    "hypercard-markdown",
+    "mandala-81-grid-image",
+    "daily-mandala-9grid"
+  ],
+  "status": "lab",
+  "version": "0.9.1"
+}

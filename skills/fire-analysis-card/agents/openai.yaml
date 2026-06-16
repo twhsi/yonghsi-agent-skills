@@ -1,0 +1,4 @@
+interface:
+  display_name: "FIRE Analysis Card"
+  short_description: "Analyze articles with FIRE cards."
+  default_prompt: "Use $fire-analysis-card to analyze this article with Fact, Index, Relation, and Encyclopedia."
