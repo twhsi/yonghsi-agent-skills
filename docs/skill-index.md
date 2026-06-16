@@ -1,5 +1,11 @@
 # Skill Index
 
+## personal-athlete-81-grid
+
+- Purpose: Create Ohtani-style editable 81-cell MandalArt training grids for personal athletes.
+- Main file: [`../skills/personal-athlete-81-grid/SKILL.md`](../skills/personal-athlete-81-grid/SKILL.md)
+- Current resources: `scripts/render_ohtani_81_grid.py`, `assets/yongxi-badminton.json`, `agents/openai.yaml`
+
 ## project-note-json-to-epub
 
 - Purpose: Convert structured project-note JSON manuscripts into validated EPUB files.

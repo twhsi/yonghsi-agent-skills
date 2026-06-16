@@ -1,11 +1,12 @@
 # 永錫 Agent Skill 庫
 
-這個資料夾整理四個已成熟、可分享、可放進 GitHub，也適合在新書中連結引用的 Codex Skills。
+這個資料夾整理五個已成熟、可分享、可放進 GitHub，也適合在新書中連結引用的 Codex Skills。
 
-## Four Core Skills
+## Core Skills
 
 | Skill | 用途 | 入口 |
 |---|---|---|
+| 個人運動員81宮格 | 參考大谷翔平 81 宮格，產生可編輯 JSON 與大谷風格 SVG 的個人運動員訓練圖 | [`skills/personal-athlete-81-grid/`](skills/personal-athlete-81-grid/) |
 | JSON 到 EPUB | 把結構化專案筆記 JSON 轉成可驗證的 EPUB | [`skills/project-note-json-to-epub/`](skills/project-note-json-to-epub/) |
 | Graph view | 從 JSON、索引、TOC、卡片資料產生 Obsidian 風格關係圖 | [`skills/obsidian-graph-view/`](skills/obsidian-graph-view/) |
 | 九宮格 / iMandalArt | 產生九宮格、曼陀羅卡、Hermes/Discord 文字卡 | [`skills/imandalart/`](skills/imandalart/) |
@@ -14,7 +15,7 @@
 ## Repo Layout
 
 ```text
-skills/      四個正式 Skills
+skills/      五個正式 Skills
 docs/        GitHub、安裝、書籍連結說明
 examples/    未來放每個 Skill 的輸入與輸出範例
 archive/     舊版或暫不公開的 Skill 草稿
@@ -25,6 +26,7 @@ archive/     舊版或暫不公開的 Skill 草稿
 把需要的 Skill 複製到 Codex skills 目錄：
 
 ```bash
+cp -R skills/personal-athlete-81-grid ~/.codex/skills/
 cp -R skills/project-note-json-to-epub ~/.codex/skills/
 cp -R skills/obsidian-graph-view ~/.codex/skills/
 cp -R skills/imandalart ~/.codex/skills/

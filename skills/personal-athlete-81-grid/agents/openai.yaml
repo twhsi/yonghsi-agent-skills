@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personal Athlete 81 Grid"
+  short_description: "Create Ohtani-style editable 81-cell athlete training grids"
+  default_prompt: "Use $personal-athlete-81-grid to turn my sport goal into an editable Ohtani-style 81-cell MandalArt grid."
