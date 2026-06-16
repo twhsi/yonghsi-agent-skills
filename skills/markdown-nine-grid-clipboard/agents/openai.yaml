@@ -1,0 +1,6 @@
+interface:
+  display_name: "Markdown / Obsidian 九宮格"
+  short_description: "將素材轉成可渲染的 Markdown 九宮表格"
+  default_prompt: "Use $markdown-nine-grid-clipboard to turn this text or iMandalArt into a Markdown nine-grid table with an ◎ center."
+policy:
+  allow_implicit_invocation: true
