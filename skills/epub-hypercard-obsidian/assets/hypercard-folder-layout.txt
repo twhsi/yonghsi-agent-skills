@@ -1,0 +1,9 @@
+hypercard-output/
+├── index.md
+├── card-3-4-1.md
+├── card-3-4-2.md
+├── ...
+├── keyword-index.md
+├── key-k001.md
+├── key-k002.md
+└── ...
