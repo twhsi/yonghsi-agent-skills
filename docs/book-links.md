@@ -7,6 +7,7 @@ Use this file as the link registry for the new book.
 | Book reference | GitHub path |
 |---|---|
 | 個人運動員81宮格 | `https://github.com/twhsi/skills/tree/main/skills/personal-athlete-81-grid` |
+| 自動魯曼編號機 | `https://github.com/twhsi/skills/tree/main/skills/auto-luhmann-numberer` |
 | JSON 到 EPUB | `https://github.com/twhsi/skills/tree/main/skills/project-note-json-to-epub` |
 | Graph view | `https://github.com/twhsi/skills/tree/main/skills/obsidian-graph-view` |
 | 九宮格 / iMandalArt | `https://github.com/twhsi/skills/tree/main/skills/imandalart` |

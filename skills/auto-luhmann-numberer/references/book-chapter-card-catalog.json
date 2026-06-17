@@ -1,0 +1,82 @@
+{
+  "schema": "auto-luhmann-numberer.public-example-catalog.v0.2",
+  "updated": "2026-06-17",
+  "public_scope": {
+    "status": "public_safe_example",
+    "case_name": "第一部日計劃 FAST",
+    "privacy_note": "This catalog is a minimal public example. It excludes the user's complete manuscript catalog, raw source excerpts, and absolute local paths."
+  },
+  "summary": {
+    "chapters": ["1.1"],
+    "expected_chapters": ["1.1"],
+    "missing": [],
+    "warnings": []
+  },
+  "chapters": [
+    {
+      "code": "1",
+      "title": "第一部：日計劃 FAST",
+      "kind": "部",
+      "depth": 1,
+      "source_path": "examples/part-1-fast-day-plan.md",
+      "observed_codes": [
+        {
+          "code": "1",
+          "title": "第一部：日計劃 FAST",
+          "kind": "部",
+          "depth": 1,
+          "prefix_status": "ok"
+        },
+        {
+          "code": "1.1",
+          "title": "FAST 日計劃",
+          "kind": "章",
+          "depth": 2,
+          "prefix_status": "ok"
+        },
+        {
+          "code": "1.1.1",
+          "title": "目標：建立可執行的一日計劃",
+          "kind": "節",
+          "depth": 3,
+          "prefix_status": "ok"
+        },
+        {
+          "code": "1.1.2",
+          "title": "阻礙：任務雜訊與注意力分散",
+          "kind": "節",
+          "depth": 3,
+          "prefix_status": "ok"
+        },
+        {
+          "code": "1.1.3",
+          "title": "努力：先吃青蛙",
+          "kind": "節",
+          "depth": 3,
+          "prefix_status": "ok"
+        },
+        {
+          "code": "1.1.4",
+          "title": "結果：清單與時間盒對齊",
+          "kind": "節",
+          "depth": 3,
+          "prefix_status": "ok"
+        },
+        {
+          "code": "1.1.E",
+          "title": "意外：九宮格視角",
+          "kind": "luhmann_branch",
+          "depth": 3,
+          "prefix_status": "ok",
+          "mandala_sections": ["1", "1.1", "1.7"]
+        }
+      ],
+      "off_prefix_codes": []
+    }
+  ],
+  "keyword_index": [
+    {"code": "K001", "title": "FAST 日計劃"},
+    {"code": "K002", "title": "魯曼分支"},
+    {"code": "K003", "title": "Mandala Section"}
+  ]
+}
