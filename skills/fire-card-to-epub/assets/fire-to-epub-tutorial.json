@@ -1,0 +1,68 @@
+{
+  "title": "FIRE 卡片變成電子書",
+  "subtitle": "從分析卡到 EPUB 的最小流程",
+  "creator": "Codex",
+  "language": "zh-Hant",
+  "version": "檢查版 2026-06-17 01",
+  "sources": [
+    {
+      "skill": "fire-analysis-card",
+      "role": "把文章壓成 Fact、Index、Relation、Encyclopedia"
+    },
+    {
+      "skill": "project-note-json-to-epub",
+      "role": "把結構化筆記包成可驗證 EPUB"
+    }
+  ],
+  "orthogonal_check": {
+    "ok": true,
+    "axes": {
+      "analysis_axis": "Fact、Index、Relation、Encyclopedia",
+      "book_axis": "目錄、正文、索引、驗證",
+      "skill_axis": "輸入、腳本、資產、GitHub",
+      "reader_axis": "教學、下載、重用、檢查"
+    }
+  },
+  "chunks": [
+    {
+      "code": "1.1",
+      "title": "先把文章變 FIRE 卡",
+      "body": "電子書不是從長文直接開始，而是先把文章壓成穩定的 FIRE 知識卡。Fact 提供材料，Index 提供重返入口，Relation 建立概念連線，Encyclopedia 把材料寫成可閱讀頁面。這一步讓後面的 EPUB 不只是排版，而是有結構的知識書。",
+      "keywords": ["FIRE", "Fact", "Index", "Relation", "Encyclopedia", "知識卡"],
+      "fire_card": "　　　　　　　　　　【Ⓕ Fact 事實】\n　　　　　　　　　　定義：四層分析\n　　　　　　　　　　主張：先卡後書\n　　　　　　　　　　證據：FIRE流程\n\n　　　　　↗　　　　　　　　　　　　　　　↘\n　　【Ⓘ Index】　　　中【◎核心】　　　【Ⓡ Relation】\n　　　重新入口　　　　◎先卡後書　　　　關係網絡\n　　　────────　────────　────────\n　　　FIRE卡　　　　　知識成形　　　　　事實供料\n　　　電子書　　　　　結構可讀　　　　　索引回鏈\n　　　教學流　　　　　人定判斷　　　　　百科成頁\n\n　　　　　↖　　　　　　　　　　　　　　　↙\n　　　　　　　　　　【Ⓔ Encyclopedia】\n　　　　　　　　　　概念：卡片成書\n　　　　　　　　　　用途：EPUB教學\n　　　　　　　　　　判斷：先穩再排"
+    },
+    {
+      "code": "1.2",
+      "title": "把多張卡整理成 JSON",
+      "body": "EPUB 需要穩定資料來源。把每張 FIRE 卡整理成 chunks 陣列，每個 chunk 至少包含 code、title、body、keywords。code 是魯曼式位置，title 是讀者看到的卡名，body 是正文，keywords 會生成書末索引卡。",
+      "keywords": ["JSON", "chunks", "魯曼編號", "keywords", "知識卡"]
+    },
+    {
+      "code": "1.3",
+      "title": "建立目錄卡與正文卡",
+      "body": "目錄卡是 EPUB 的入口，負責列出每張正文卡與字數。正文卡則保留卡片粒度，每一頁只處理一個概念。這種做法適合 Obsidian、LLM 專案檔，也適合日後拆成章節小書。",
+      "keywords": ["目錄卡", "正文卡", "EPUB", "Obsidian", "章節拆書"]
+    },
+    {
+      "code": "1.4",
+      "title": "加入關鍵字索引卡",
+      "body": "索引卡讓電子書可以跳讀。每個關鍵字取得 K001、K002 這類穩定編號，索引卡連到相關正文，正文裡的關鍵詞也回鏈到索引卡。這形成雙向連結，讓 EPUB 不只是線性書，而是可重新進入的知識網。",
+      "keywords": ["關鍵字索引", "K001", "雙向連結", "回鏈", "知識網"]
+    },
+    {
+      "code": "1.5",
+      "title": "驗證 EPUB 再上傳 GitHub",
+      "body": "最後一步是驗證。生成器會檢查 EPUB 裡每個 XHTML、href、anchor、索引連結與正文回鏈。確認 errors: 0 後，再把 SKILL.md、腳本、範例 JSON 與 EPUB 放進 GitHub Skill repo。這樣 Skill 不只會說明，也帶著可下載的電子書檔案。",
+      "keywords": ["驗證", "GitHub", "Skill", "EPUB", "download.epub"]
+    }
+  ],
+  "index": [
+    {"id": "K001", "keyword": "FIRE", "weight": 100},
+    {"id": "K002", "keyword": "EPUB", "weight": 96},
+    {"id": "K003", "keyword": "JSON", "weight": 92},
+    {"id": "K004", "keyword": "關鍵字索引", "weight": 88},
+    {"id": "K005", "keyword": "雙向連結", "weight": 84},
+    {"id": "K006", "keyword": "GitHub", "weight": 80},
+    {"id": "K007", "keyword": "Skill", "weight": 78}
+  ]
+}

@@ -10,6 +10,7 @@ cp -R skills/project-note-json-to-epub ~/.codex/skills/
 cp -R skills/obsidian-graph-view ~/.codex/skills/
 cp -R skills/imandalart ~/.codex/skills/
 cp -R skills/fire-analysis-card ~/.codex/skills/
+cp -R skills/fire-card-to-epub ~/.codex/skills/
 ```
 
 如果已經安裝過同名 Skill，先在 VS Code 比對差異，再決定是否覆蓋。
@@ -22,6 +23,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/p
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/obsidian-graph-view
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/imandalart
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/fire-analysis-card
+python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/fire-card-to-epub
 ```
 
 ## Trigger Examples
@@ -32,4 +34,5 @@ Use $project-note-json-to-epub to convert this project-note JSON into an EPUB.
 Use $obsidian-graph-view to render a weighted graph view from this keyword index.
 Use $imandalart to turn this theme into a nine-grid card.
 Use $fire-analysis-card to analyze this Chinese article with FIRE.
+Use $fire-card-to-epub to turn FIRE cards into a validated EPUB with keyword index links.
 ```

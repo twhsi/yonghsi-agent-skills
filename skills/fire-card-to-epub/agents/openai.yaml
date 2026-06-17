@@ -1,0 +1,4 @@
+interface:
+  display_name: "FIRE Card to EPUB"
+  short_description: "Turn FIRE cards into EPUB books"
+  default_prompt: "Use $fire-card-to-epub to turn these FIRE analysis cards or project-note JSON into a validated EPUB with keyword index links."

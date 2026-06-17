@@ -1,6 +1,6 @@
 # 永錫 Agent Skill 庫
 
-這個資料夾整理五個已成熟、可分享、可放進 GitHub，也適合在新書中連結引用的 Codex Skills。
+這個資料夾整理可分享、可放進 GitHub，也適合在新書中連結引用的 Codex Skills。
 
 ## Core Skills
 
@@ -11,11 +11,12 @@
 | Graph view | 從 JSON、索引、TOC、卡片資料產生 Obsidian 風格關係圖 | [`skills/obsidian-graph-view/`](skills/obsidian-graph-view/) |
 | 九宮格 / iMandalArt | 產生九宮格、曼陀羅卡、Hermes/Discord 文字卡 | [`skills/imandalart/`](skills/imandalart/) |
 | FIRE 原則 | 以 Fact、Index、Relation、Encyclopedia 分析中文文章 | [`skills/fire-analysis-card/`](skills/fire-analysis-card/) |
+| FIRE 卡到 EPUB | 把 FIRE 分析卡或專案筆記 JSON 轉成可驗證 EPUB，並附示範電子書 | [`skills/fire-card-to-epub/`](skills/fire-card-to-epub/) |
 
 ## Repo Layout
 
 ```text
-skills/      五個正式 Skills
+skills/      正式 Skills
 docs/        GitHub、安裝、書籍連結說明
 examples/    未來放每個 Skill 的輸入與輸出範例
 archive/     舊版或暫不公開的 Skill 草稿
@@ -31,6 +32,7 @@ cp -R skills/project-note-json-to-epub ~/.codex/skills/
 cp -R skills/obsidian-graph-view ~/.codex/skills/
 cp -R skills/imandalart ~/.codex/skills/
 cp -R skills/fire-analysis-card ~/.codex/skills/
+cp -R skills/fire-card-to-epub ~/.codex/skills/
 ```
 
 更多說明見 [`docs/install.md`](docs/install.md)。
@@ -46,7 +48,7 @@ code "/Users/twhsi/+++ 000 AI向量庫/01 Agent Skill庫"
 建議每次修改後驗證 Skill：
 
 ```bash
-python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/imandalart
+python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/fire-card-to-epub
 ```
 
 ## Book Links
