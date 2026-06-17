@@ -24,6 +24,12 @@
 - Main file: [`../skills/imandalart/SKILL.md`](../skills/imandalart/SKILL.md)
 - Current resources: script, style reference, sample JSON, sample HTML, sample PNG
 
+## markdown-nine-grid-clipboard
+
+- Purpose: Convert text, iMandalArt cards, Obsidian 九宮 notes, or eight-domain outlines into Markdown 3x3 tables with an ◎ center.
+- Main file: [`../skills/markdown-nine-grid-clipboard/SKILL.md`](../skills/markdown-nine-grid-clipboard/SKILL.md)
+- Current resources: `scripts/copy_grid.py`, `agents/openai.yaml`
+
 ## fire-analysis-card
 
 - Purpose: Analyze Chinese articles around 1000 characters with Fact, Index, Relation, and Encyclopedia.
