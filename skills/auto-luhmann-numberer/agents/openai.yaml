@@ -1,0 +1,7 @@
+interface:
+  display_name: "自動魯曼編號機"
+  short_description: "為書稿與卡片盒分配並清理魯曼式編號。"
+  default_prompt: "Use $auto-luhmann-numberer to scan this folder, list every 部、章、節、項、目 code, flag missing/duplicate/off-prefix ids, and sanitize private catalogs into public examples when needed."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,4 @@
+interface:
+  display_name: "EPUB HyperCard Obsidian"
+  short_description: "EPUB to Obsidian HyperCard zip"
+  default_prompt: "Use $epub-hypercard-obsidian to convert this EPUB into an Obsidian HyperCard folder with verified links and a portable zip."

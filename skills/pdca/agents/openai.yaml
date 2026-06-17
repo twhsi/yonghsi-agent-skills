@@ -1,0 +1,7 @@
+interface:
+  display_name: "PDCA Compass"
+  short_description: "中文方位PDCA/CAPD問題解決文字圖卡"
+  default_prompt: "Use $pdca to turn this problem into a Chinese compass-style PDCA/CAPD problem-solving card."
+
+policy:
+  allow_implicit_invocation: true
