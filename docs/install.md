@@ -14,6 +14,7 @@ cp -R skills/obsidian-graph-view ~/.codex/skills/
 cp -R skills/imandalart ~/.codex/skills/
 cp -R skills/markdown-nine-grid-clipboard ~/.codex/skills/
 cp -R skills/fire-analysis-card ~/.codex/skills/
+cp -R skills/fire-card-to-epub ~/.codex/skills/
 cp -R skills/pdca ~/.codex/skills/
 ```
 
@@ -31,6 +32,7 @@ python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/o
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/imandalart
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/markdown-nine-grid-clipboard
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/fire-analysis-card
+python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/fire-card-to-epub
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/pdca
 ```
 
@@ -46,5 +48,6 @@ Use $obsidian-graph-view to render a weighted graph view from this keyword index
 Use $imandalart to turn this theme into a nine-grid card.
 Use $markdown-nine-grid-clipboard to turn this iMandalArt into an Obsidian Markdown nine-grid table.
 Use $fire-analysis-card to analyze this Chinese article with FIRE.
+Use $fire-card-to-epub to turn FIRE cards into a validated EPUB with keyword index links.
 Use $pdca to turn this problem into a Chinese compass-style PDCA/CAPD card.
 ```

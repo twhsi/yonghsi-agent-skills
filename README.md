@@ -73,6 +73,7 @@ Use $todays-daily-plan 今日的日計畫，上午羽球，下午三點林君，
 把反覆發生的工作沉澱成 Codex Skill，讓 Agent 記得流程、格式、驗證方式。
 
 - [`skills/project-note-json-to-epub/`](skills/project-note-json-to-epub/)：把 project-note JSON 變成可驗證 EPUB。
+- [`skills/fire-card-to-epub/`](skills/fire-card-to-epub/)：把 FIRE 分析卡或 project-note JSON 變成可驗證 EPUB。
 - [`skills/epub-hypercard-obsidian/`](skills/epub-hypercard-obsidian/)：把 EPUB 卡片書轉成 Obsidian HyperCard 資料夾。
 - [`docs/skill-index.md`](docs/skill-index.md)：Skill 索引。
 
@@ -107,6 +108,12 @@ Desktop 軸的重點不是更多工具，而是降低切換成本：
 以 Fact、Index、Relation、Encyclopedia 分析中文文章，適合書稿、筆記、研究材料。
 
 入口：[`skills/fire-analysis-card/`](skills/fire-analysis-card/)
+
+### FIRE 卡到 EPUB
+
+把 FIRE 分析卡或專案筆記 JSON 轉成可驗證 EPUB，支援目錄卡、章節卡、關鍵詞索引卡與回鏈驗證。
+
+入口：[`skills/fire-card-to-epub/`](skills/fire-card-to-epub/)
 
 ### iMandalArt 九宮卡
 
@@ -161,6 +168,7 @@ cp -R skills/imandalart ~/.codex/skills/
 cp -R skills/markdown-nine-grid-clipboard ~/.codex/skills/
 cp -R skills/obsidian-graph-view ~/.codex/skills/
 cp -R skills/project-note-json-to-epub ~/.codex/skills/
+cp -R skills/fire-card-to-epub ~/.codex/skills/
 cp -R skills/epub-hypercard-obsidian ~/.codex/skills/
 ```
 
@@ -187,6 +195,7 @@ https://github.com/twhsi/skills
 建議每次修改 Skill 後驗證：
 
 ```bash
+python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/fire-card-to-epub
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py skills/todays-daily-plan
 ```
 

@@ -54,3 +54,15 @@
 - Purpose: Analyze Chinese articles around 1000 characters with Fact, Index, Relation, and Encyclopedia.
 - Main file: [`../skills/fire-analysis-card/SKILL.md`](../skills/fire-analysis-card/SKILL.md)
 - Current resources: `agents/openai.yaml`
+
+## fire-card-to-epub
+
+- Purpose: Convert FIRE analysis cards or project-note JSON into validated EPUB books with TOC, index cards, backlinks, and attached ebook assets.
+- Main file: [`../skills/fire-card-to-epub/SKILL.md`](../skills/fire-card-to-epub/SKILL.md)
+- Current resources: `scripts/fire_cards_to_epub.py`, `assets/fire-to-epub-tutorial.json`, `assets/fire-to-epub-tutorial.epub`, `assets/download.epub`, `agents/openai.yaml`
+
+## pdca
+
+- Purpose: Create Chinese monospaced compass-style PDCA or CAPD problem-solving cards.
+- Main file: [`../skills/pdca/SKILL.md`](../skills/pdca/SKILL.md)
+- Current resources: `agents/openai.yaml`

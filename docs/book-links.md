@@ -15,6 +15,8 @@ Use this file as the link registry for the new book.
 | 九宮格 / iMandalArt | `https://github.com/twhsi/skills/tree/main/skills/imandalart` |
 | Markdown / Obsidian 九宮格 | `https://github.com/twhsi/skills/tree/main/skills/markdown-nine-grid-clipboard` |
 | FIRE 原則 | `https://github.com/twhsi/skills/tree/main/skills/fire-analysis-card` |
+| FIRE 卡到 EPUB | `https://github.com/twhsi/skills/tree/main/skills/fire-card-to-epub` |
+| FIRE 到 EPUB 示範電子書 | `https://github.com/twhsi/skills/raw/main/skills/fire-card-to-epub/assets/fire-to-epub-tutorial.epub` |
 | PDCA / CAPD 方位卡 | `https://github.com/twhsi/skills/tree/main/skills/pdca` |
 
 ## Suggested Chapter Text
