@@ -70,6 +70,7 @@ Examples for 2026:
 3. If the root exists but children are missing, insert missing child markers in order before the next root marker.
 4. Ensure the first non-empty line of each child section is `### {slot title}`.
 5. Append user content inside the target child section, before the next section marker.
-6. Preserve all unrelated text, tables, images, links, and code blocks.
+6. If continuing after an interrupted run, compare the requested entry against the target child section and skip exact duplicates.
+7. Preserve all unrelated text, tables, images, links, and code blocks.
 
 Prefer `scripts/update_today_plan.py` for this pattern.

@@ -306,6 +306,17 @@ def append_entry(lines: List[str], section: str, entry: str) -> List[str]:
     return lines
 
 
+def section_has_entry(section_lines: List[str], entry: str) -> bool:
+    needle = [line.rstrip() for line in entry.split("\n")]
+    haystack = [line.rstrip() for line in section_lines]
+    if not needle:
+        return False
+    for index in range(0, len(haystack) - len(needle) + 1):
+        if haystack[index : index + len(needle)] == needle:
+            return True
+    return False
+
+
 def update_markdown(markdown: str, date_text: str, slot: str, text: str, kind: str) -> Tuple[str, Dict[str, object]]:
     normalized = markdown.replace("\r\n", "\n")
     frontmatter, body = split_frontmatter(normalized)
@@ -338,7 +349,9 @@ def update_markdown(markdown: str, date_text: str, slot: str, text: str, kind: s
     child = f"{root}.{slot_key}"
     _marker, start, end = get_section_bounds(lines, child)
     entry = format_entry(text, kind, lines[start:end], slot_key)
-    lines = append_entry(lines, child, entry)
+    duplicate_skipped = section_has_entry(lines[start:end], entry)
+    if not duplicate_skipped:
+        lines = append_entry(lines, child, entry)
 
     return frontmatter + "\n".join(lines), {
         "date": target_date.isoformat(),
@@ -347,6 +360,7 @@ def update_markdown(markdown: str, date_text: str, slot: str, text: str, kind: s
         "slot_title": slots[slot_key],
         "section": child,
         "entry": entry,
+        "duplicate_skipped": duplicate_skipped,
     }
 
 

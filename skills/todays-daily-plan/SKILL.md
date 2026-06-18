@@ -25,8 +25,9 @@ Only operate on files with `mandala: true` and `mandala_plan.enabled: true`. Do 
 3. Resolve the day root section from the plan year and date. Example: 2026-06-18 is section `169`.
 4. Ensure the day has 8 child sections and slot headings from `mandala_plan.slots`.
 5. Classify each spoken item into a slot.
-6. Append content to the chosen section. Never overwrite existing content unless the user explicitly asks to replace it.
-7. Summarize the changed section(s) and keep the user's voice intact.
+6. Before writing, inspect the target day or run the script without `--apply` to preview. If the task resumes after an interruption, append only entries that are still missing.
+7. Append content to the chosen section. Never overwrite existing content unless the user explicitly asks to replace it.
+8. Read back the target day section after writing and summarize the changed section(s). When the user asks for syntax, show the exact spoken prompt pattern they can reuse.
 
 ## Slot Routing
 
@@ -42,6 +43,8 @@ Use explicit time first, then semantic cues.
 - `8` / `日記`: 日記, 反省, 感謝, 心得, 今天發生, 回顧, 感覺.
 
 If the user says `青蛙`, `frog`, or `🐸`, preserve that marker in the entry. Route it by the surrounding time words; if no time is present, ask one short clarification or append to `日記` when it is clearly a reflection.
+
+If the user gives both a vague spoken time and an explicit slot, prefer the explicit slot. Example: `八點那一格...十八點這格` should go to `18-19` when the user names `18點` or `18-19`. Preserve the user's chosen names, but normalize obvious speech/context slips when the surrounding context is clear, such as `小木` to `小睦` in this diary and `Scale loops` to `Skill Loops` in a Skill/GitHub topic.
 
 ## Entry Formatting
 
@@ -66,6 +69,8 @@ python3 scripts/update_today_plan.py \
 
 Preview without writing by omitting `--apply`. Use `--kind diary`, `--kind task`, `--kind done`, or `--kind plain` when the output format should be explicit.
 
+The script reports `duplicate_skipped: true` when the exact entry already exists in the target section. Treat that as a successful no-op, especially when continuing after a partial write.
+
 ## Examples
 
 User: `今日的日計畫，上午羽球，下午三點林君，日記 Miru 來訪，狀況不是很好，加油。`
@@ -78,3 +83,18 @@ Action:
 User: `🐸 晚上耿彬 Hermes＋Codex 活動。`
 
 Action: Append `🐸 耿彬 Hermes＋Codex 活動` to `19-21`.
+
+User:
+
+```text
+請做 2026-06-19 五 的日計畫：
+09-12 準備晚上直播投影片。
+13-15 14:00 小睦到達。
+18-19 晚上和小睦一起吃披薩。
+19-21 20:00 騰訊直播，主題：Hermes、Skill Loops、GitHub。
+```
+
+Action:
+- Preview or inspect `2026-06-19` first.
+- Append each line into the matching slot only if missing.
+- Read back the `2026-06-19` section and report the reusable syntax if requested.

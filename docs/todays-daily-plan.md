@@ -56,6 +56,39 @@ mandala_plan:
 今天 18:30 管委會，放到 18-19。
 ```
 
+## 完整台詞範例
+
+```text
+[$todays-daily-plan](/Users/twhsi/.codex/skills/todays-daily-plan/SKILL.md)
+請做 2026-06-19 五 的日計畫：
+09-12 準備晚上直播投影片。
+13-15 14:00 小睦到達。
+18-19 晚上和小睦一起吃披薩。
+19-21 20:00 騰訊直播，主題：Hermes、Skill Loops、GitHub。
+```
+
+寫入後會落在同一天的這些 Mandala Grid section：
+
+```md
+<!--section: 170.2-->
+### 09-12
+準備晚上直播投影片
+
+<!--section: 170.4-->
+### 13-15
+14:00 小睦到達
+
+<!--section: 170.6-->
+### 18-19
+晚上和小睦一起吃披薩
+
+<!--section: 170.7-->
+### 19-21
+20:00 騰訊直播，主題：Hermes、Skill Loops、GitHub
+```
+
+如果一次只寫了一部分，再說「繼續」時，Skill 會先檢查當天 section，已存在的文字不重複追加，只補尚未寫入的時段。
+
 ## 手動測試腳本
 
 從 Skill 目錄執行：
@@ -78,6 +111,16 @@ python3 scripts/update_today_plan.py \
   --text "今天完成了今日的日計畫 Skill，正式進入 GitHub 技能庫。" \
   --kind diary \
   --apply
+```
+
+如果同一格同一句已存在，腳本會回報：
+
+```json
+{
+  "duplicate_skipped": true,
+  "changed": false,
+  "applied": true
+}
 ```
 
 ## 安裝
