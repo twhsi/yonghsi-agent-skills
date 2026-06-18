@@ -2,9 +2,17 @@
 
 這個資料夾整理已成熟、可分享、可放進 GitHub，也適合在新書中連結引用的 Codex Skills。
 
-## 今日首頁：今日的日計畫
+## Featured Skill：今日的日計畫
 
-[`今日的日計畫`](skills/todays-daily-plan/) 是新的正式 Skill：把口語輸入、青蛙標記、日計劃、九宮、時段與日記，安全寫入 Obsidian Mandala Grid 的年度日計畫 Markdown。
+[`今日的日計畫`](skills/todays-daily-plan/) 是這個 repo 目前主打的正式 Skill。它專門服務 Obsidian 的 Mandala Grid 日計畫檔：當你用口語說「上午羽球」「下午三點林君」「晚上合唱」「補今天日記」時，Codex 會把內容分配到今天的九宮時段，並安全追加到正確的 `<!--section: N.x-->` 區塊。
+
+這個 Skill 的關鍵字是：`青蛙`、`日計劃`、`日計畫`、`九宮`、`時段`、`日記`、`Mandala Grid`。它特別適合每天早上或晚上用嘴巴整理一天，不需要手動在 Markdown 裡找今天的 section。
+
+它會做三件事：
+
+- 找到今天在年度日計畫中的 section，例如 `2026-06-18` 是 `169`。
+- 補齊今天的 8 個九宮格時段：`陽光起床運動`、`09-12`、`12-13`、`13-15`、`15-18`、`18-19`、`19-21`、`日記`。
+- 只追加到目標時段或日記，不重排全年檔案，不破壞 Mandala Grid 的 section marker。
 
 快速說法：
 
@@ -12,7 +20,8 @@
 Use $todays-daily-plan 今日的日計畫，上午羽球，下午三點林君，日記 Miru 來訪，狀況不是很好，加油。
 ```
 
-教學見 [`docs/todays-daily-plan.md`](docs/todays-daily-plan.md)。
+正式 Skill：[`skills/todays-daily-plan/`](skills/todays-daily-plan/)  
+完整教學：[`docs/todays-daily-plan.md`](docs/todays-daily-plan.md)
 
 ## Hermes HyperCard Loop
 
