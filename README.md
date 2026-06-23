@@ -1,4 +1,4 @@
-# 永錫 Agent Skill 庫
+# 永錫 Agent Skill 2.0 庫
 
 > 知識工作者的第二大腦系統：Agent 高效率，人腦慢生活。
 
