@@ -2,3 +2,6 @@
 /book-companion-skill/
 __pycache__/
 *.pyc
+/dist/
+/node_modules/
+/.vercel/

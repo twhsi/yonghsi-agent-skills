@@ -226,6 +226,18 @@ https://github.com/twhsi/skills
 本章延伸 Skill: https://github.com/twhsi/skills/tree/main/skills/todays-daily-plan
 ```
 
+## Website
+
+這個 repo 也可以部署成免費的 Agent-first website：
+
+- Source：`site/`
+- Build：`npm run build`
+- Output：`dist/`
+- Agent endpoints：`/agent.json`、`/skills.json`、`/llms.txt`
+- Free deploy：GitHub repo -> Vercel build -> Cloudflare DNS
+
+Vercel 設定已放在 [`vercel.json`](vercel.json)：build command 使用 `npm run build`，output directory 使用 `dist`。
+
 ## Maintain
 
 建議每次修改 Skill 後驗證：
