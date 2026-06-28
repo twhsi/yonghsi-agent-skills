@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Install & Deploy | 永錫 Agent Skill 庫</title>
+    <meta
+      name="description"
+      content="永錫 Agent Skill 庫的本機安裝與免費網站部署指引：GitHub source of truth、Vercel build、Cloudflare DNS。"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/site.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-shell">
+        <a class="brand" href="/">
+          <span class="brand-mark">永</span>
+          <span>永錫 Agent Skill 庫</span>
+        </a>
+        <nav class="top-nav" aria-label="Install navigation">
+          <a class="nav-link" href="/agent.json">Agent Manifest</a>
+          <a class="nav-link" href="/skills.json">Skills JSON</a>
+          <a class="nav-link" href="https://github.com/twhsi/skills">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero site-shell">
+        <div class="hero-copy">
+          <h1>Install & Deploy</h1>
+          <p class="split-line"><span>GitHub source，</span><span>Vercel 上線，Cloudflare 接網域</span></p>
+          <p class="lead">
+            這個網站是靜態輸出：不需要資料庫、不需要付費後端。Agent metadata 由 repo 內的
+            <code>skills/*/SKILL.md</code> 生成，人看的頁面由 Vercel 發布。
+          </p>
+          <div class="status-rail" aria-label="Deployment settings">
+            <span>build: <strong>npm run build</strong></span>
+            <span>output: <strong>dist</strong></span>
+            <span>hosting: <strong>Vercel</strong></span>
+            <span>dns: <strong>Cloudflare</strong></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section site-shell">
+        <div class="section-head">
+          <h2>Local</h2>
+          <p>本機產生網站輸出，先確認 Agent 端點存在。</p>
+          <a href="/llms.txt">/llms.txt</a>
+        </div>
+        <table class="endpoint-table">
+          <tbody>
+            <tr>
+              <td><code>npm run build</code></td>
+              <td>從 repo 產生 <code>dist/</code>、<code>agent.json</code>、<code>skills.json</code>、<code>llms.txt</code>。</td>
+              <td><button data-copy="/agent.json">Copy manifest URL</button></td>
+            </tr>
+            <tr>
+              <td><code>npm run preview</code></td>
+              <td>用 Python 在本機預覽 <code>dist/</code>，預設 <code>http://localhost:4177</code>。</td>
+              <td><a href="/">Back home</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section site-shell">
+        <div class="section-head">
+          <h2>Vercel</h2>
+          <p>免費部署：匯入 GitHub repo，讓 Vercel 每次 push 後自動 build。</p>
+          <a href="https://vercel.com/home">vercel.com</a>
+        </div>
+        <div class="route-grid">
+          <article class="route-row">
+            <div><strong>1</strong><a href="https://vercel.com/home">Import Project</a></div>
+            <p>在 Vercel 新增專案，選擇 <code>twhsi/skills</code> 這個 GitHub repository。</p>
+            <code>Framework Preset: Other</code>
+          </article>
+          <article class="route-row">
+            <div><strong>2</strong><a href="/agent.json">Build Settings</a></div>
+            <p>專案已有 <code>vercel.json</code>，Vercel 會使用 build command 與 output directory。</p>
+            <code>buildCommand: npm run build  outputDirectory: dist</code>
+          </article>
+          <article class="route-row">
+            <div><strong>3</strong><a href="/skills.json">Verify</a></div>
+            <p>部署後先打開 <code>/agent.json</code>、<code>/skills.json</code>、<code>/llms.txt</code>，確認 Agent 入口可讀。</p>
+            <code>/agent.json  /skills.json  /llms.txt</code>
+          </article>
+        </div>
+      </section>
+
+      <section class="section site-shell">
+        <div class="section-head">
+          <h2>Cloudflare</h2>
+          <p>Cloudflare 負責 DNS。實際 record 以 Vercel 專案 Domains 頁面顯示的值為準。</p>
+          <a href="https://dash.cloudflare.com/">dash.cloudflare.com</a>
+        </div>
+        <div class="route-grid">
+          <article class="route-row">
+            <div><strong>DNS</strong><a href="https://dash.cloudflare.com/">Dashboard</a></div>
+            <p>到 Cloudflare DNS 新增 Vercel 要求的 record。子網域常用 CNAME；根網域依 Vercel 顯示的 A/CNAME 設定。</p>
+            <code>skills.example.com -> Vercel DNS target</code>
+          </article>
+          <article class="route-row">
+            <div><strong>HTTPS</strong><a href="https://vercel.com/home">Domain</a></div>
+            <p>回到 Vercel Domains 等待驗證通過。HTTPS 憑證會由 Vercel 對部署網域處理。</p>
+            <code>open /agent.json after DNS resolves</code>
+          </article>
+          <article class="route-row">
+            <div><strong>Agent</strong><a href="/llms.txt">Context</a></div>
+            <p>自訂網域完成後，把 <code>/llms.txt</code> 當作對外 LLM context，把 <code>/agent.json</code> 當作機器入口。</p>
+            <code>80% agent-readable  20% human-readable</code>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-shell footer-grid">
+        <div>
+          <a class="brand" href="/">
+            <span class="brand-mark">永</span>
+            <span>永錫 Agent Skill 庫</span>
+          </a>
+          <p>免費部署的價值不是省錢而已，是讓 repo 變成可被下一個 Agent 讀取的公開介面。</p>
+        </div>
+        <div>
+          <h3>Build</h3>
+          <div class="footer-links">
+            <a href="/agent.json">agent.json</a>
+            <a href="/skills.json">skills.json</a>
+            <a href="/llms.txt">llms.txt</a>
+          </div>
+        </div>
+        <div>
+          <h3>Deploy</h3>
+          <div class="footer-links">
+            <a href="https://vercel.com/home">Vercel</a>
+            <a href="https://dash.cloudflare.com/">Cloudflare</a>
+          </div>
+        </div>
+        <div>
+          <h3>Source</h3>
+          <div class="footer-links">
+            <a href="https://github.com/twhsi/skills">twhsi/skills</a>
+            <a href="https://github.com/twhsi/skills/blob/main/docs/install.md">docs/install.md</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/site.js" type="module"></script>
+  </body>
+</html>
